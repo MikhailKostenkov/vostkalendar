@@ -5,17 +5,28 @@
  */
 package kalendar;
 
+import java.util.Scanner;
+
 /**
  *
  * @author user
  */
-public class Kalendar {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+public class vostkalendar {
+    private static final String [] color = {"Белого/Белой","Белого/Белой", "Синего/Синей","Синего/Синей", "Зеленого/Зеленой","Зеленого/Зеленой",
+                                    "Красного/Красной","Красного/Красной", "Желтого/Желтой","Желтого/Желтой"};
+                                    
+    private static final String [] animalsName = {"обезьяны", "петуха", "собаки", "свиньи", "крысы", "быка",
+                                            "тигра", "кролика", "дракона", "змеи", "лошади", "овцы"};
+ 
+    private static String getChainNameOfYear(int yearNumber) {
+        return color[yearNumber % color.length] + " " + animalsName[yearNumber % animalsName.length];
     }
-    
+ 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Китайский календарь");
+        System.out.print("Введите год: ");
+        int year = scanner.nextInt();
+        System.out.println(getChainNameOfYear(year));
+    }
 }
